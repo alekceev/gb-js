@@ -41,6 +41,8 @@
                     this.units    = Math.floor(value%10/1);
                     this.tens     = Math.floor(value%100/10);
                     this.hundreds = Math.floor(value%1000/100);
+                } else {
+                    console.log("Value должно быть целым в диапазоне [0..999]");
                 }
             }
 
