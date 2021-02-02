@@ -27,6 +27,20 @@
     -->
 
     <script>
+        "use strict";
+
+        let goTop = document.querySelector("#goToTop");
+
+        goTop.addEventListener("click", () => window.scrollTo(0, 0));
+
+        window.addEventListener("scroll", function() {
+            console.log(window.pageYOffset);
+            if (window.pageYOffset > 500) {
+                goTop.style.display = "block";
+            } else {
+                goTop.style.display = "none";
+            }
+        });
         
     </script>
 </body>

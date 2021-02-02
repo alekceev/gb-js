@@ -41,7 +41,17 @@
     -->
 
     <script>
-        
+        "use strict";
+
+        let productImgs = document.querySelectorAll("img");
+
+        function loadImages() {
+            for (let i = 1; i <= productImgs.length; i++ ) {
+                productImgs[i-1].setAttribute("src", `images/${i}.jpg`);
+            }
+        };
+
+        setTimeout(loadImages, 3000);
     </script>
 </body>
 </html>

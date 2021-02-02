@@ -41,6 +41,17 @@
     -->
 
     <script>
+        "use strict";
+
+        let btns = document.querySelectorAll(".product");
+        btns.forEach( function(btn){
+            btn.addEventListener("click", buttonClickHandler);
+        });
+
+        function buttonClickHandler(event) {
+            event.target.parentNode.style.background = "lightgreen";
+            event.target.textContent = "Добавлено";
+        }
         
     </script>
 </body>
