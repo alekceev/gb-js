@@ -39,15 +39,28 @@
 
         let goldenClass = 'golden';
 
-        firstStar.addEventListener('mouseover', function() {
-            if (!firstStar.classList.contains('goldenClass')) {
-                firstStar.classList.add(goldenClass);
-            }
+        let stars = document.querySelectorAll(".fa-star");
+
+        stars.forEach(function(star){
+            star.addEventListener('mouseover', function(event) {
+                let el = event.target;
+                while(el) {
+                    if (!el.classList.contains(goldenClass)) {
+                        el.classList.add(goldenClass);
+                    }
+                    el = el.previousElementSibling;
+                }
+            });
+
+            star.addEventListener('mouseout', function(event) {
+                let el = event.target;
+                while (el) {
+                    el.classList.remove(goldenClass);
+                    el = el.previousElementSibling;
+                }
+            });
         });
 
-        firstStar.addEventListener('mouseout', function() {
-            firstStar.classList.remove(goldenClass);
-        });
     </script>
 </body>
 </html>
